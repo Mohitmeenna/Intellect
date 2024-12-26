@@ -1,27 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap');
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
 }
-.navbar{
+
+.navbar {
+    height: auto;
+    display: flex; /* Enable flexbox for the navbar */
+    justify-content: space-between; /* Distribute space between left and right sections */
+    align-items: center; /* Vertically center items */
     border: 10px solid #000000;
     border-radius: 20px;
+    background-color: rgb(0, 0, 0);
+    width: auto;
+
+    box-shadow: 2px 10px 16px -2px rgba(244, 244, 244, 0.79);
+    box-shadow: 2px 10px 16px -2px rgba(244, 244, 244, 0.79),  /* Shadow below */
+    inset 2px 10px 16px -2px rgba(244, 244, 244, 0.79); /* Shadow above */
 }
-.navbar-lf{
-    width: 40%;
+
+.navbar-lf {
+    display: flex; /* Enable flexbox for the left section */
+    align-items: center; /* Vertically center items */
+    width: 49%; /* Allow the width to adjust based on content */
+    height: auto;
 }
-.navbar-rgt{
-    width: 40%;
+
+.navbar-rgt {
+    display: flex; /* Enable flexbox for the right section */
+    align-items: center; /* Vertically center items */
+    width: 49%; /* Allow the width to adjust based on content */
 }
+
+.navbar img {
+    width: 100px; /* Adjust as needed */
+    height: 45px; /* Adjust as needed */
+    margin-right: 10px; /* Add some space between logo and button */
+}
+
 .navbar{
-    background-color: white;
+    background-color: rgb(0, 0, 0);
     width: auto;
 }
 .navbar button{ 
     width: 40%;
     background-color: rgb(243, 241, 241);
-    color: black;
+    color: rgb(255, 255, 255);
     border: none;
     text-align: center;
     text-decoration: none;
@@ -29,7 +56,19 @@ body {
     font-size: 16px;
     margin: 4px 2px;
     cursor: pointer;
+    color: white;
+    background-color: transparent; /* Make buttons transparent */
+    /* border: 1px solid white;  */
 }
+
+.navbar .nav-button { /* Or a more specific selector if needed */
+    height: 50px;       /* Set the desired height */
+    line-height: 50px; /* Usually set to the same as height for vertical centering */
+    /* ... other button styles ... */
+}
+
+
+
 .navbar button:hover {
     color: #fffbfb;
     background-color: #000000;
@@ -46,7 +85,7 @@ h1, h2, h3, h5 {
 
 
 h1 {
-    font-size: 120px;
+    font-size: 100px;
     margin-top: 30px;
 }
 
@@ -59,11 +98,14 @@ h3 {
     font-size: 20px;
 }
 
+
 h5 {
-    font-size: 16px;
+    font-size: 21px;
     color: #cdcaca;
     font-weight: lighter;
     margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
 #col {
@@ -79,6 +121,22 @@ h5 {
     -webkit-text-fill-color: transparent;
     text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.5);
 }
+#div2 button{
+    font-size: 24px;
+}
+
+#logo{
+    display: block;
+    width: 150px;
+    height: 56px;
+    margin: 20px auto;
+    background-color: #181818;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 2px 2px 4px rgba(255, 255, 255, 0.5);
+}
 
 button {
     display: block;
@@ -90,6 +148,18 @@ button {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    /* box-shadow: 2px 2px 4px rgba(255, 255, 255, 0.5); */
+}
+
+
+
+img {
+    display: block;
+    margin: 30px auto;
+    border-radius: 50%;
+    width: 80%;
+    max-width: 400px;
+    height: auto;
     box-shadow: 2px 2px 4px rgba(255, 255, 255, 0.5);
 }
 
@@ -108,17 +178,24 @@ button:hover {
     max-width: 800px;
     height: auto;
     box-shadow: 2px 2px 4px rgba(244, 0, 0, 0.5);
+    margin-top: 250px;
+    margin-bottom: 200px;
 }
 
-img {
-    display: block;
-    margin: 30px auto;
-    border-radius: 50%;
-    width: 80%;
-    max-width: 400px;
-    height: auto;
-    box-shadow: 2px 2px 4px rgba(255, 255, 255, 0.5);
+#div3 {
+    text-align: center;
+    margin-left: 154px;
+    margin-right: 154px;
+    margin-bottom: 50px;
+    display: flex; /* Enable flexbox */
+    flex-direction: column; /* Default: stack vertically */
 }
+
+#div3 > div {
+    width: 100%; /* Default: full width */
+}
+
+
 
 .container {
     color: #ffffff;
@@ -133,18 +210,38 @@ a {
 
 /* Media Queries for Responsive Design */
 
+@media (min-width: 1024px) {
+    #div3 {
+        flex-direction: row; /* Arrange divs side-by-side */
+        justify-content: space-between;
+        align-items: center;
+        gap: 10%;
+    }
+
+    #div3 > div {
+        width: 45%; /* Each div takes 45% width */
+    }
+}
+
 @media (max-width: 768px) {
+    #logo{
+        width: 120px;
+        height: 50px;
+    }
     h1 {
-        font-size: 60px;
+        font-size: 100px;
     }
     h2 {
-        font-size: 50px;
+        font-size: 80px;
     }
     h3 {
-        font-size: 18px;
+        font-size: 26px;
+    }
+    h4 {
+        font-size: 36px;
     }
     h5 {
-        font-size: 14px;
+        font-size: 18px;
     }
     img {
         width: 70%;
@@ -152,28 +249,42 @@ a {
     .nav-button{
         font-size: 14px;
     }
+    .navbar {
+        height: 60px; /* Smaller height for tablets */
+    }
    
     button {
         width: 150px;
-        font-size: 14px; /* Adjust font size for smaller screens */
+        font-size: 22px; /* Adjust font size for smaller screens */
     }
     a {
         font-size: 14px; /* Adjust font size for smaller screens */
     }
+    #video-background {
+        top: 50px; /* Example - adjust this value */
+    }
+    #div3 {
+        margin-left: 50px;
+        margin-right: 50px;
+    }
 }
 
 @media (max-width: 480px) {
+    #logo{
+        width: 110px;
+        height: 45px;
+    }
     h1 {
-        font-size: 35px;
+        font-size: 55px;
     }
     h2 {
-        font-size: 20px;
+        font-size: 30px;
     }
     h3 {
         font-size: 16px;
     }
     h5 {
-        font-size: 12px;
+        font-size: 17px;
     }
     img {
         width: 80%;
@@ -181,14 +292,152 @@ a {
     #div2 {
         width: 95%;
     }
-    .nav-button{
-        font-size: 12px;
-    }
+    
     button {
-        width: 120px;
-        font-size: 12px; /* Further reduce font size for very small screens */
+        width: 141px;
+        font-size: 21px; /* Further reduce font size for very small screens */
+    }
+    .nav-button{
+        font-size: 10px;
     }
     a {
         font-size: 12px; /* Further reduce font size for very small screens */
     }
+    .navbar {
+        height: 50px; /* Even smaller height for mobile */
+    }
+
+    .navbar-rgt {
+        width: 50%;
+    }
+    .navbar-lf {
+        width: 49%;
+    }
+    .navbar button {
+        width: auto; /* Reduce button width */
+        font-size: 12px; /* Reduce font size */
+    }
+    .nav-button {
+        margin-left: 3px;
+        margin-right: 3px;
+    }
+
+    div.content{
+        padding-top: 0;
+        padding-bottom: 45px;
+    }
+    #div2 {
+        margin-top: 20px;
+        margin-bottom: 70px;
+        border: 2px solid #f4f4f4;
+        padding-top: 40px;
+    }
+    #div3 {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+    #video-background {
+        top: 0px; /* Example - adjust this value */
+    }
+}
+
+
+/* ... Your existing styles ... */
+
+/* Timeline Styles */
+.timeline-container { /* Changed from .blue-bg */
+    background-color: black; /* Adjust as needed */
+    color: #f3f3f3; /* Adjust as needed */
+    font-family: 'Lato', sans-serif;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.timeline-container .circle {
+    font-weight: bold;
+    padding: 15px 20px;
+    border-radius: 50%;
+    background-color: #f4efef; /* Adjust as needed */
+    color: #070707f9; /* Adjust as needed */
+    max-height: 50px;
+    z-index: 2;
+}
+
+.timeline-container .how-it-works.row {
+    display: flex;
+}
+
+.timeline-container .how-it-works .col-2 {
+    display: inline-flex;
+    align-self: stretch;
+    align-items: center;
+    justify-content: center;
+}
+
+.timeline-container .how-it-works .col-2::after {
+    content: '';
+    position: absolute;
+    border-left: 3px solid #f8f4f4; /* Adjust as needed */
+    z-index: 1;
+}
+
+.timeline-container .how-it-works .col-2.bottom::after {
+    height: 50%;
+    left: 50%;
+    top: 50%;
+}
+
+.timeline-container .how-it-works .col-2.full::after {
+    height: 100%;
+    left: calc(50% - 3px);
+}
+
+.timeline-container .how-it-works .col-2.top::after {
+    height: 50%;
+    left: 50%;
+    top: 0;
+}
+
+.timeline-container .timeline div {
+    padding: 0;
+    height: 40px;
+}
+
+.timeline-container .timeline hr {
+    border-top: 3px solid #f3f3f3; /* Adjust as needed */
+    margin: 0;
+    top: 17px;
+    position: relative;
+}
+
+.timeline-container .timeline .col-2 {
+    display: flex;
+    overflow: hidden;
+}
+
+.timeline-container .timeline .corner {
+    border: 3px solid #f9f5f5; /* Adjust as needed */
+    width: 100%;
+    position: relative;
+    border-radius: 15px;
+}
+
+.timeline-container .timeline .top-right {
+    left: 50%;
+    top: -50%;
+}
+
+.timeline-container .timeline .left-bottom {
+    left: -50%;
+    top: calc(50% - 3px);
+}
+
+.timeline-container .timeline .top-left {
+    left: -50%;
+    top: -50%;
+}
+
+.timeline-container .timeline .right-bottom {
+    left: 50%;
+    top: calc(50% - 3px);
 }
