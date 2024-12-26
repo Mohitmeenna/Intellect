@@ -25,14 +25,14 @@ body {
 .navbar-lf {
     display: flex; /* Enable flexbox for the left section */
     align-items: center; /* Vertically center items */
-    width: 49%; /* Allow the width to adjust based on content */
+    width: 50%; /* Allow the width to adjust based on content */
     height: auto;
 }
 
 .navbar-rgt {
     display: flex; /* Enable flexbox for the right section */
     align-items: center; /* Vertically center items */
-    width: 49%; /* Allow the width to adjust based on content */
+    width: 50%; /* Allow the width to adjust based on content */
 }
 
 .navbar img {
@@ -183,12 +183,15 @@ button:hover {
 }
 
 #div3 {
+    align-self: center;
     text-align: center;
     margin-left: 154px;
     margin-right: 154px;
     margin-bottom: 50px;
-    display: flex; /* Enable flexbox */
-    flex-direction: column; /* Default: stack vertically */
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally */
+    gap: 10%;
 }
 
 #div3 > div {
@@ -215,11 +218,22 @@ a {
         flex-direction: row; /* Arrange divs side-by-side */
         justify-content: space-between;
         align-items: center;
-        gap: 10%;
+        position: relative; /* For positioning the pseudo-element */
     }
 
     #div3 > div {
         width: 45%; /* Each div takes 45% width */
+    }
+
+    #div3::after {
+        content: "";
+        position: absolute;
+        top: 10%;
+        left: 50%; /* Center the line horizontally */
+        bottom: 0;
+        width: 1px; /* Adjust line thickness as needed */
+        background-color: white; /* Line color */
+        transform: translateX(-50%); /* Adjust for centering */
     }
 }
 

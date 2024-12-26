@@ -57,9 +57,9 @@
             
         </div>
         <div class="navbar-rgt">
-            <button class="nav-button" >About</button>
-            <button class="nav-button">Login</button>
-            <button class="nav-button">Signup</button>
+            <button class="nav-button" onclick="window.location.href='About.html'">About</button>
+            <button class="nav-button" id="privacy-button" onclick="window.location.href='privacy.html'">Privacy & Policy</button>
+            <button class="nav-button" id="terms-button" onclick="window.location.href='terms.html'">Terms</button>
         </div>
     </nav>
 
@@ -129,7 +129,7 @@
                     <div class="circle">1</div>
                 </div>
             </div>
-            <div class="row timeline">
+            <!-- <div class="row timeline">
                 <div class="col-2">
                     <div class="corner right-bottom"></div>
                 </div>
@@ -139,10 +139,10 @@
                 <div class="col-2">
                     <div class="corner top-left"></div>
                 </div>
-            </div>
+            </div> -->
         </div>
     
-        <div class="timeline-section">
+        <!-- <div class="timeline-section">
             <div class="row align-items-center how-it-works">
                 <div class="col-2 text-center top">
                     <div class="circle">2</div>
@@ -152,7 +152,7 @@
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porttitor gravida aliquam. Morbi orci urna, iaculis in ligula et, posuere interdum lectus.</p>
                 </div>
             </div>
-        </div>
+        </div> -->
     </div>
     <div class="container">
         <footer class="py-3 my-4">
@@ -160,11 +160,33 @@
             <li class="nav-item"><a href="#" class="nav-link px-2 text-white">Home</a></li>
             <li class="nav-item"><a href="#" class="nav-link px-2 text-white">Features</a></li>
             <li class="nav-item"><a href="#" class="nav-link px-2 text-white">FAQs</a></li>
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-white">About</a></li>
+            <li class="nav-item"><a href="./About.html" class="nav-link px-2 text-white">About</a></li>
           </ul>
           <p class="text-center text-muted">© 2024 Intellect, Inc</p>
         </footer>
       </div>
+</body>
+
+</html>
+
+<script>
+    function updateButtonText() {
+        const privacyButton = document.getElementById("privacy-button");
+        const termsButton = document.getElementById("terms-button");
+
+        if (window.innerWidth < 919) {
+            privacyButton.textContent = "Privacy";
+            termsButton.textContent = "T & C";
+        } else {
+            privacyButton.textContent = "Privacy & Policy";
+            termsButton.textContent = "Terms & Condition";
+        }
+    }
+
+    // Call the function initially and on window resize
+    updateButtonText();
+    window.addEventListener("resize", updateButtonText);
+</script>
 </body>
 
 </html>
