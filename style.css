@@ -143,8 +143,8 @@ button {
     width: 200px;
     height: 45px;
     margin: 20px auto;
-    background-color: #181818;
-    color: #ffffff;
+    background-color: #ffffff;
+    color: #000000;
     border: none;
     border-radius: 5px;
     cursor: pointer;
