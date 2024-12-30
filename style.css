@@ -7,73 +7,64 @@ body {
     background-color: #f4f4f4;
 }
 
+/* Navbar Styles */
 .navbar {
     height: auto;
-    display: flex; /* Enable flexbox for the navbar */
-    justify-content: space-between; /* Distribute space between left and right sections */
-    align-items: center; /* Vertically center items */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     border: 10px solid #000000;
     border-radius: 20px;
     background-color: rgb(0, 0, 0);
     width: auto;
-
-    box-shadow: 2px 10px 16px -2px rgba(244, 244, 244, 0.79);
-    box-shadow: 2px 10px 16px -2px rgba(244, 244, 244, 0.79),  /* Shadow below */
-    inset 2px 10px 16px -2px rgba(244, 244, 244, 0.79); /* Shadow above */
+    box-shadow: 2px 10px 16px -2px rgba(244, 244, 244, 0.79),
+                inset 2px 10px 16px -2px rgba(244, 244, 244, 0.79);
 }
 
 .navbar-lf {
-    display: flex; /* Enable flexbox for the left section */
-    align-items: center; /* Vertically center items */
-    width: 50%; /* Allow the width to adjust based on content */
+    display: flex;
+    align-items: center;
+    width: 50%;
     height: auto;
 }
 
 .navbar-rgt {
-    display: flex; /* Enable flexbox for the right section */
-    align-items: center; /* Vertically center items */
-    width: 50%; /* Allow the width to adjust based on content */
+    display: flex;
+    align-items: center;
+    width: 50%;
 }
 
 .navbar img {
-    width: 100px; /* Adjust as needed */
-    height: 45px; /* Adjust as needed */
-    margin-right: 10px; /* Add some space between logo and button */
+    width: 100px;
+    height: 45px;
+    margin-right: 10px;
 }
 
-.navbar{
-    background-color: rgb(0, 0, 0);
-    width: auto;
-}
-.navbar button{ 
+.navbar button {
     width: 40%;
-    background-color: rgb(243, 241, 241);
+    background-color: transparent;
     color: rgb(255, 255, 255);
     border: none;
     text-align: center;
     text-decoration: none;
-    display:inline-block;
+    display: inline-block;
     font-size: 16px;
     margin: 4px 2px;
     cursor: pointer;
-    color: white;
-    background-color: transparent; /* Make buttons transparent */
-    /* border: 1px solid white;  */
 }
 
-.navbar .nav-button { /* Or a more specific selector if needed */
-    height: 50px;       /* Set the desired height */
-    line-height: 50px; /* Usually set to the same as height for vertical centering */
-    /* ... other button styles ... */
+.navbar .nav-button {
+    height: 50px;
+    line-height: 50px;
 }
-
-
 
 .navbar button:hover {
     color: #fffbfb;
     background-color: #000000;
 }
-.content{
+
+/* Content Styles */
+.content {
     padding: 75px 0;
 }
 
@@ -82,7 +73,6 @@ h1, h2, h3, h5 {
     text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.5);
     text-align: center;
 }
-
 
 h1 {
     font-size: 100px;
@@ -97,7 +87,6 @@ h2 {
 h3 {
     font-size: 20px;
 }
-
 
 h5 {
     font-size: 21px;
@@ -121,53 +110,8 @@ h5 {
     -webkit-text-fill-color: transparent;
     text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.5);
 }
-#div2 button{
-    font-size: 24px;
-}
 
-#logo{
-    display: block;
-    width: 150px;
-    height: 56px;
-    margin: 20px auto;
-    background-color: #181818;
-    color: #ffffff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    box-shadow: 2px 2px 4px rgba(255, 255, 255, 0.5);
-}
-
-button {
-    display: block;
-    width: 200px;
-    height: 45px;
-    margin: 20px auto;
-    background-color: #ffffff;
-    color: #000000;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    /* box-shadow: 2px 2px 4px rgba(255, 255, 255, 0.5); */
-}
-
-
-
-img {
-    display: block;
-    margin: 30px auto;
-    border-radius: 50%;
-    width: 80%;
-    max-width: 400px;
-    height: auto;
-    box-shadow: 2px 2px 4px rgba(255, 255, 255, 0.5);
-}
-
-button:hover {
-    color: #000000;
-    background-color: #fffcfc;
-}
-
+/* Div 2 Styles (Buttons and Form) */
 #div2 {
     margin: 258px auto 200px auto;
     padding: 65px 0;
@@ -180,8 +124,159 @@ button:hover {
     box-shadow: 2px 2px 4px rgba(244, 0, 0, 0.5);
     margin-top: 250px;
     margin-bottom: 200px;
+    text-align: center; /* Center align elements inside #div2 */
 }
 
+#div2 button {
+    font-size: 24px;
+    display: inline-flex; /* Use inline-flex for better alignment */
+    align-items: center; /* Vertically center text and icon */
+    justify-content: center; /* Center content horizontally */
+    width: auto;
+    margin: 20px 10px;
+    padding: 10px; /* Add some padding */
+    background: none; /* Remove background */
+    color: white; /* White text */
+    cursor: pointer;
+}
+
+#div2 button i {
+    margin: 0 5px; /* Add some space between text and icon */
+    font-size: inherit; /* Icon should have the same size as the text */
+}
+
+#waitlist-button {
+    font-size: 24px;
+    color: white;
+    background: none;
+    border: 2px solid white;
+    cursor: pointer;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+#waitlist-button i {
+    font-size: 24px; /* Adjust icon size to match text */
+    border: 2px solid white;
+    margin-left: 5px;
+}
+
+#or-text {
+    color: white;
+    margin-top: -10px;
+    margin-bottom: -5px;
+}
+
+#apk-link {
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+#apk-link button {
+    font-size: 24px;
+    color: white;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+#apk-link i {
+    font-size: 24px;
+    margin-left: 5px;
+}
+
+#email-form {
+    display: none;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.email-input-container {
+    display: flex;
+    margin: 20px;
+    border: 1px solid white;
+    border-radius: 5px;
+    overflow: hidden; /* Ensure the button doesn't overflow the container */
+}
+
+#email-input {
+  border: none;
+  border-radius: 5px;
+  padding: 8px;
+  margin-bottom: 10px;
+  width: calc(100% - 40px);
+  background: none;
+  color: white;
+}
+
+#email-input:focus {
+  outline: none;
+}
+
+#submit-email {
+    background: none;
+    border: none;
+    padding: 0 10px;
+    cursor: pointer;
+    color: white;
+    display: flex; /* For aligning the arrow icon */
+    align-items: center;
+}
+
+#submit-email i {
+    font-size: 20px;
+}
+
+#response-message {
+    margin-top: 10px;
+    color: white;
+}
+
+/* Logo Styles */
+#logo {
+    display: block;
+    width: 150px;
+    height: 56px;
+    margin: 20px auto;
+    background-color: #181818;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 2px 2px 4px rgba(255, 255, 255, 0.5);
+}
+
+/* General Button Styles */
+button {
+    display: block;
+    width: 200px;
+    height: 45px;
+    margin: 20px auto;
+    background-color: #ffffff;
+    color: #000000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    color: #000000;
+    background-color: #fffcfc;
+}
+
+/* Image Styles */
+img {
+    display: block;
+    margin: 30px auto;
+    border-radius: 50%;
+    width: 80%;
+    max-width: 400px;
+    height: auto;
+    box-shadow: 2px 2px 4px rgba(255, 255, 255, 0.5);
+}
+
+/* Div 3 Styles */
 #div3 {
     align-self: center;
     text-align: center;
@@ -189,94 +284,113 @@ button:hover {
     margin-right: 154px;
     margin-bottom: 50px;
     display: flex;
-    flex-direction: column; /* Stack items vertically */
-    align-items: center; /* Center items horizontally */
+    flex-direction: column;
+    align-items: center;
     gap: 10%;
 }
 
 #div3 > div {
-    width: 100%; /* Default: full width */
+    width: 100%;
 }
 
-
-
+/* Container Styles */
 .container {
     color: #ffffff;
     margin-top: 50px;
 }
 
+/* Link Styles */
 a {
     color: #ffffff;
     text-decoration: none;
     margin: 0 5px;
 }
 
-/* Media Queries for Responsive Design */
+/* Play Button Image Styles */
+#play {
+    border-radius: 0%;
+    border: none;
+    display: block;
+    margin: 0 auto;
+    height: auto;
+    width: 100%;
+    height: 100%;
+}
 
+/* Media Queries for Responsive Design */
 @media (min-width: 1024px) {
     #div3 {
-        flex-direction: row; /* Arrange divs side-by-side */
+        flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        position: relative; /* For positioning the pseudo-element */
+        position: relative;
     }
 
     #div3 > div {
-        width: 45%; /* Each div takes 45% width */
+        width: 45%;
     }
 
     #div3::after {
         content: "";
         position: absolute;
         top: 10%;
-        left: 50%; /* Center the line horizontally */
+        left: 50%;
         bottom: 0;
-        width: 1px; /* Adjust line thickness as needed */
-        background-color: white; /* Line color */
-        transform: translateX(-50%); /* Adjust for centering */
+        width: 1px;
+        background-color: white;
+        transform: translateX(-50%);
     }
 }
 
 @media (max-width: 768px) {
-    #logo{
+    #logo {
         width: 120px;
         height: 50px;
     }
+
     h1 {
         font-size: 100px;
     }
+
     h2 {
         font-size: 80px;
     }
+
     h3 {
         font-size: 26px;
     }
+
     h4 {
         font-size: 36px;
     }
+
     h5 {
         font-size: 18px;
     }
+
     img {
         width: 70%;
     }
-    .nav-button{
+
+    .nav-button {
         font-size: 14px;
     }
+
     .navbar {
-        height: 60px; /* Smaller height for tablets */
+        height: 60px;
     }
-   
+
     button {
         width: 150px;
-        font-size: 22px; /* Adjust font size for smaller screens */
+        font-size: 22px;
     }
+
     a {
-        font-size: 14px; /* Adjust font size for smaller screens */
+        font-size: 14px;
     }
-    #video-background {
-        top: 50px; /* Example - adjust this value */
-    }
+
+    
+
     #div3 {
         margin-left: 50px;
         margin-right: 50px;
@@ -284,84 +398,96 @@ a {
 }
 
 @media (max-width: 480px) {
-    #logo{
+    #logo {
         width: 110px;
         height: 45px;
     }
+
     h1 {
         font-size: 55px;
     }
+
     h2 {
         font-size: 30px;
     }
+
     h3 {
         font-size: 16px;
     }
+
     h5 {
         font-size: 17px;
     }
+
     img {
         width: 80%;
     }
+
     #div2 {
         width: 95%;
     }
-    
+
     button {
         width: 141px;
-        font-size: 21px; /* Further reduce font size for very small screens */
+        font-size: 21px;
     }
-    .nav-button{
+
+    .nav-button {
         font-size: 10px;
     }
+
     a {
-        font-size: 12px; /* Further reduce font size for very small screens */
+        font-size: 12px;
     }
+
     .navbar {
-        height: 50px; /* Even smaller height for mobile */
+        height: 50px;
     }
 
     .navbar-rgt {
         width: 50%;
     }
+
     .navbar-lf {
         width: 49%;
     }
+
     .navbar button {
-        width: auto; /* Reduce button width */
-        font-size: 12px; /* Reduce font size */
+        width: auto;
+        font-size: 12px;
     }
+
     .nav-button {
         margin-left: 3px;
         margin-right: 3px;
     }
 
-    div.content{
+    div.content {
         padding-top: 0;
         padding-bottom: 45px;
     }
+
     #div2 {
         margin-top: 20px;
         margin-bottom: 70px;
         border: 2px solid #f4f4f4;
         padding-top: 40px;
     }
+
     #div3 {
         margin-left: 20px;
         margin-right: 20px;
     }
+
     #video-background {
-        top: 0px; /* Example - adjust this value */
+        top: 0px;
     }
 }
 
-
-/* ... Your existing styles ... */
-
 /* Timeline Styles */
-.timeline-container { /* Changed from .blue-bg */
-    background-color: black; /* Adjust as needed */
-    color: #f3f3f3; /* Adjust as needed */
+.timeline-container {
+    background-color: black;
+    color: #f3f3f3;
     font-family: 'Lato', sans-serif;
     margin-left: 5%;
     margin-right: 5%;
@@ -371,8 +497,8 @@ a {
     font-weight: bold;
     padding: 15px 20px;
     border-radius: 50%;
-    background-color: #f4efef; /* Adjust as needed */
-    color: #070707f9; /* Adjust as needed */
+    background-color: #f4efef;
+    color: #070707f9;
     max-height: 50px;
     z-index: 2;
 }
@@ -391,7 +517,7 @@ a {
 .timeline-container .how-it-works .col-2::after {
     content: '';
     position: absolute;
-    border-left: 3px solid #f8f4f4; /* Adjust as needed */
+    border-left: 3px solid #f8f4f4;
     z-index: 1;
 }
 
@@ -418,7 +544,7 @@ a {
 }
 
 .timeline-container .timeline hr {
-    border-top: 3px solid #f3f3f3; /* Adjust as needed */
+    border-top: 3px solid #f3f3f3;
     margin: 0;
     top: 17px;
     position: relative;
@@ -430,7 +556,7 @@ a {
 }
 
 .timeline-container .timeline .corner {
-    border: 3px solid #f9f5f5; /* Adjust as needed */
+    border: 3px solid #f9f5f5;
     width: 100%;
     position: relative;
     border-radius: 15px;

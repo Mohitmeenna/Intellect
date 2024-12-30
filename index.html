@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="icon.svg" type="image/x-icon">
     <style>
@@ -53,14 +54,15 @@
     
 
     <nav class="navbar" style="height: 105px;">
-        <div class="navbar-lf">
-            <img class="nav-button-img" id="logo" style="margin-left: 10px;" src="./logo.png" alt="" srcset="">
-            
-        </div>
+        <a href="index.html">
+            <img class="nav-button-img" id="logo" style="margin-left: 20px;margin-top: 17px;" src="./logo.png"
+                alt="Intellect Logo">
+        </a>
         <div class="navbar-rgt">
             <button class="nav-button" onclick="window.location.href='About.html'">About</button>
+            <button class="nav-button" onclick="window.location.href='feedback.html'">Feedback</button>
             <button class="nav-button" id="privacy-button" onclick="window.location.href='privacy.html'">Privacy & Policy</button>
-            <button class="nav-button" id="terms-button" onclick="window.location.href='terms.html'">Terms</button>
+            <!-- <button class="nav-button" id="terms-button" onclick="window.location.href='terms.html'">Terms</button> -->
         </div>
     </nav>
 
@@ -74,15 +76,30 @@
         <H3>Experience Intellect's Personal AI Assistant</H3>
 
     </div>
+
+
     <div id="div2">
-        <a href="https://drive.google.com/file/d/15uY5d9SOSM-foqYABG95PwmS9AZ26FxQ/view?usp=sharing" target="_blank" style="text-decoration: none;">
-          <button>Download App</button>
+        <button id="waitlist-button">
+            Join Play Store Waitlist  <i class="fa-brands fa-google-play"></i>
+        </button>
+        <p id="or-text" style="font-size: 30px;">or</p>
+        <div id="email-form" style="display: none;">
+          <div class="email-input-container">
+            <input type="email" id="email-input" placeholder="Enter email address" required>
+            <button id="submit-email"><i class="fas fa-arrow-right"></i></button>
+          </div>
+          <p id="response-message"></p>
+        </div>
+        <a id="apk-link" href="https://drive.google.com/file/d/15uY5d9SOSM-foqYABG95PwmS9AZ26FxQ/view?usp=sharing" target="_blank" style="text-decoration: none;">
+          <button style="border: 2px solid white">Install APK <i class="fa-solid fa-arrow-down"></i> Now</button>
         </a>
         <h5>Intellect is now available for early alpha testing! Download our Android app today to explore its features and provide your valuable feedback.</h5>
-      </div>
+    </div>
+
     <video autoplay loop muted id="video-background">
         <source src="vid.mp4" type="video/mp4">
     </video>
+
 
     <div id="div3" >
         <div id="div3-1">
@@ -177,18 +194,41 @@
         const privacyButton = document.getElementById("privacy-button");
         const termsButton = document.getElementById("terms-button");
 
-        if (window.innerWidth < 919) {
+        if (window.innerWidth < 806) {
             privacyButton.textContent = "Privacy";
             termsButton.textContent = "T & C";
-        } else {
-            privacyButton.textContent = "Privacy & Policy";
-            termsButton.textContent = "Terms & Condition";
-        }
+        } 
     }
 
     // Call the function initially and on window resize
     updateButtonText();
     window.addEventListener("resize", updateButtonText);
+
+    document.getElementById("waitlist-button").addEventListener("click", function() {
+      document.getElementById("email-form").style.display = "block";
+      document.getElementById("or-text").style.display = "none";
+    });
+
+    document.getElementById("submit-email").addEventListener("click", function() {
+      const email = document.getElementById("email-input").value;
+      const data = { email: email };
+
+      fetch('https://iloveyouineveryuniverse.online/api/waitlist/join', { // Replace with your actual API endpoint
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      })
+      .then(response => response.json())
+      .then(data => {
+        document.getElementById("response-message").textContent = data.message; // Display message from server
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+        document.getElementById("response-message").textContent = "An error occurred.";
+      });
+    });
 </script>
 </body>
 
